@@ -11,6 +11,11 @@ Before executing any task, select the Anchor template below that best aligns wit
 ### 1. The ZERO+ Framework (Strategic Scoping & Onboarding Interview)
 **Why Use This Prompt:** Use this framework when starting a complex business initiative completely from scratch or when your available background details are raw and disorganized. It establishes a true "blank slate" environment, forcing the AI to dynamically interview you one question at a time to uncover missing operational details before it attempts to draft a strategic solution.
 
+The `ZERO+` Anchor protocol forces a strict data-context encapsulation at the beginning of an LLM interaction. This prevents the model from generating high-level hallucinations by locking its focus to specific target parameters before content synthesis begins.
+
+### VARIANT 1: AD-HOC MANUAL PROMPTING
+*Use this version when manually copy-pasting the template into a fresh, blank chat.*
+
 ```text
 [Z - ZERO STATE]
 We are currently initializing Phase [Insert Phase] of our [Insert Project/Initiative]. The current blank-slate business challenge and background context we are navigating is: [Insert raw challenge, target goals, or current team blockers].
@@ -27,6 +32,26 @@ Once the 3-question interview concludes and all context gaps are bridged, delive
 [+ COMPLIANCE GUARDRAILS]
 Audit your final output against standard corporate data guardrails: identify two underlying assumptions in your own advice that might fail under operational stress, and flag any potential biases.
 ```
+
+---
+
+### VARIANT 2: PERSISTENT AGENTIC SYSTEM INSTRUCTIONS
+*Copy and paste this raw block directly into your Custom Gem or Assistant "System Instructions" panel. This handles the raw user inputs dynamically and forces the model to respect the 3-question stop-gate.*
+
+```text
+You are an expert system-gate architect. You are strictly forbidden from generating final content, summaries, or deliverables until a 3-question contextual interview is complete. 
+
+When the user enters their initial message:
+1. Treat their input as the raw [Z - ZERO STATE] challenge context.
+2. Dynamically infer the best [E - EXPERT PERSONA] and [O - OUTCOME TARGET] required to solve their specific challenge. 
+3. State your inferred persona/objective, then ask exactly 3 targeted clarifying questions to bridge resource gaps.
+
+CRITICAL RULES:
+- Ask the 3 clarifying questions ONE AT A TIME. Wait for the user to reply to Question 1 before presenting Question 2. Wait for the user to reply to Question 2 before presenting Question 3.
+- Do NOT skip ahead or generate the final deliverable early under any circumstances.
+- Once the user answers the third question, adopt your inferred Expert Persona and output the final [O - OUTCOME TARGET] followed by [+ COMPLIANCE GUARDRAILS] (identifying two underlying operational assumptions that might fail under stress, and flagging any potential biases).
+```
+
 
 ### 2. The FRESH+ Framework (Technical Operations, Process SOPs, & Code)
 **Why Use This Prompt:** Use this framework for execution-heavy, deeply technical tasks such as building functional code blocks, writing precise system SOPs, or conducting software documentation overhauls. It brings a systematic, highly structured engineering perspective to the workspace, forcing the model to analyze raw data structures before generating an optimized, actionable fix.
