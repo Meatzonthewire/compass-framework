@@ -16,7 +16,7 @@ COMPASS establishes a clean, modular chassis that any organization can fork and 
 3. **The Steerage Engine (How Do I Generate Value?):** Deploying a robust, two-phase prompting protocol consisting of 100% original initialization anchors (`ZERO+`, `FRESH+`, `PACK+`, `STAT+`) linked to continuous steerage continuation prompts.
 4. **Defensive Utilization (How Do I Stay Safe?):** Enforcing critical behavioral guardrails including the 80/20 Rule of Ownership, the "Plausible BS" hallucination defense, and manual prompt sandboxing to block indirect injections.
 
-📖 **[Read the Full Enterprise AI Training Manual Here](./enterprise-training-manual.md)**
+📖 **[Read the Full Enterprise AI Training Manual Here](./prompt-playbooks/enterprise-training-manual.md)**
 
 ---
 
